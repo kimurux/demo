@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ремонтный Сервис</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Ремонтный Сервис</h1>
+        
+        <div id="loginForm">
+            <h2>Вход</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Имя пользователя" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+
+        <div id="dashboard" style="display: none;">
+            <h2>Панель управления</h2>
+            <p id="userInfo"></p>
+            <button id="logout-btn">Выйти</button>
+            <button id="new-request-btn">Новая заявка</button>
+            <div id="repair-requests"></div>
+        </div>
+
+        <div id="newRequestForm" style="display: none;">
+            <h2>Новая заявка на ремонт</h2>
+            <form id="new-request-form">
+                <input type="text" id="title" placeholder="Название" required>
+                <textarea id="description" placeholder="Описание" required></textarea>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+
+        <div id="editRequestForm" style="display: none;">
+            <h2>Редактировать заявку</h2>
+            <form id="edit-request-form">
+                <input type="hidden" id="edit-request-id">
+                <input type="text" id="edit-title" placeholder="Название" required>
+                <textarea id="edit-description" placeholder="Описание" required></textarea>
+                <select id="edit-status" required>
+                    <option value="PENDING">Ожидает</option>
+                    <option value="IN_PROGRESS">В работе</option>
+                    <option value="COMPLETED">Завершено</option>
+                </select>
+                <button type="submit">Обновить заявку</button>
+            </form>
+        </div>
+
+        <div id="adminPanel" style="display: none;">
+            <h2>Панель администратора</h2>
+            <h3>Пользователи</h3>
+            <div id="userList"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
